@@ -26,12 +26,6 @@ Just run mytree in terminal
 make install
 ```
 
-### Tests
-
-```sh
-make test
-```
-
 ## Meta
 
 Distributed under the MIT license. See ``license.txt`` for more information
