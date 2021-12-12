@@ -19,9 +19,13 @@ def print_dir(path, padding=0):
         else:
             symbol = '├──'
             
+        start_symbol = '│'
+        if padding == 0:
+            start_symbol = ''
+
         if os.path.isfile(f"{path}/{s}"):
-            print(' ' * padding + symbol + s)
+            print(start_symbol + ' ' * padding * 3 + symbol + s)
         elif os.path.isdir(f"{path}/{s}") and not s in dirs_to_ignore:
-            print(' ' * padding + symbol + s)
-            print_dir(f"{path}/{s}", padding + 3)
+            print(start_symbol + ' ' * padding * 3 + symbol + s)
+            print_dir(f"{path}/{s}", padding + 1)
         
